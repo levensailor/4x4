@@ -1,0 +1,10 @@
+{
+  "name": "two-stroke-guru",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/export-content.mjs",
+    "export:content": "node scripts/export-content.mjs"
+  }
+}

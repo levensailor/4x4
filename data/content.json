@@ -1,0 +1,594 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.04.25.001",
+  "generatedAt": "2026-04-25T23:53:00-04:00",
+  "minAppVersion": "1.0.0",
+  "navItems": [
+    {"id": "safety-workflow", "href": "/sheets/safety-workflow", "label": "Safety", "title": "Safety and Shop Workflow", "icon": "🧰"},
+    {"id": "two-stroke-cycle", "href": "/sheets/two-stroke-cycle", "label": "Cycle", "title": "How a 2-Stroke Works", "icon": "⚙️"},
+    {"id": "no-start-triage", "href": "/sheets/no-start-triage", "label": "No Start", "title": "No-Start Triage", "icon": "🔎"},
+    {"id": "spark-plug-reading", "href": "/sheets/spark-plug-reading", "label": "Plug Read", "title": "Spark Plug Reading", "icon": "⚡"},
+    {"id": "fuel-oil-mix", "href": "/sheets/fuel-oil-mix", "label": "Fuel Mix", "title": "Fuel, Oil, and Storage", "icon": "⛽"},
+    {"id": "carburetor-service", "href": "/sheets/carburetor-service", "label": "Carb", "title": "Carburetor Service and Tuning", "icon": "💨"},
+    {"id": "air-leaks-reeds", "href": "/sheets/air-leaks-reeds", "label": "Air Leaks", "title": "Air Leaks and Reed Valves", "icon": "🌬️"},
+    {"id": "compression-testing", "href": "/sheets/compression-testing", "label": "Compression", "title": "Compression Testing", "icon": "📈"},
+    {"id": "top-end-rebuild", "href": "/sheets/top-end-rebuild", "label": "Top End", "title": "Top-End Inspection and Rebuild", "icon": "🔧"},
+    {"id": "exhaust-power-valve", "href": "/sheets/exhaust-power-valve", "label": "Exhaust", "title": "Exhaust, Silencer, and Power Valve", "icon": "🌀"},
+    {"id": "overheating-seizure", "href": "/sheets/overheating-seizure", "label": "Heat", "title": "Overheating and Seizure Clues", "icon": "🌡️"},
+    {"id": "maintenance-storage", "href": "/sheets/maintenance-storage", "label": "Storage", "title": "Maintenance and Long-Term Storage", "icon": "📅"},
+    {"id": "tools-torque", "href": "/sheets/tools-torque", "label": "Tools", "title": "Tools, Torque, and Measurements", "icon": "📏"},
+    {"id": "sources-reference", "href": "/sheets/sources-reference", "label": "Sources", "title": "Research Sources and Field Notes", "icon": "📚"}
+  ],
+  "cheatSheets": [
+    {
+      "id": "safety-workflow",
+      "category": "Fundamentals",
+      "header": {
+        "title": "Safety and Shop Workflow",
+        "subtitle": "Set up the bench before touching the engine.",
+        "icon": "🧰",
+        "accent": "blue",
+        "graphics": [
+          {"symbol": "wrench.and.screwdriver.fill", "title": "Clean bench", "caption": "Keep grit away from crankcases and cylinders."},
+          {"symbol": "eye.fill", "title": "Eye protection", "caption": "Clips, springs, and solvent can launch unexpectedly."},
+          {"symbol": "flame.fill", "title": "Fuel control", "caption": "Work cold, ventilated, and away from ignition sources."}
+        ]
+      },
+      "summary": "Most 2-stroke failures become expensive when dirt, old fuel, or guesswork gets introduced during diagnosis. This chapter gives you the order of operations.",
+      "sections": [
+        {"type": "chain", "title": "Repair order of operations", "steps": [
+          {"name": "Make it safe", "goal": "Cool engine, disconnect plug cap, drain risky fuel, and stabilize the machine."},
+          {"name": "Record baseline", "goal": "Note symptoms, fuel age, plug condition, compression, and visible leaks before cleaning everything."},
+          {"name": "Test systems", "goal": "Confirm fuel, spark, compression, and air sealing instead of replacing parts by habit."},
+          {"name": "Repair one variable", "goal": "Change one system at a time, then retest so the actual fix is known."}
+        ]},
+        {"type": "cards", "title": "Shop habits that prevent repeat failures", "cards": [
+          {"title": "Cleanliness", "items": ["Cap open intake and crankcase ports", "Use lint-free rags around bearings", "Wash exterior dirt before teardown"]},
+          {"title": "Documentation", "items": ["Photograph linkages before disassembly", "Bag fasteners by assembly", "Write down jet sizes and screw turns"]},
+          {"title": "Safety", "items": ["Ventilate around premix and solvent", "Use gloves for carb cleaner", "Do not spark-test near fuel vapor"]}
+        ]},
+        {"type": "checklist", "title": "Before the first pull", "items": [
+          "Fresh known-correct premix is in a clean container.",
+          "Air filter is present, seated, and not soaked with fuel.",
+          "Spark plug is correct type and properly tightened.",
+          "Throttle returns freely and kill switch is understood.",
+          "Cutting chain, prop, wheel, or attachment is secured before testing."
+        ]}
+      ]
+    },
+    {
+      "id": "two-stroke-cycle",
+      "category": "Fundamentals",
+      "header": {
+        "title": "How a 2-Stroke Works",
+        "subtitle": "Understand crankcase pumping, ports, and why small leaks matter.",
+        "icon": "⚙️",
+        "accent": "purple",
+        "graphics": [
+          {"symbol": "arrow.down.to.line.compact", "title": "Compression", "caption": "Piston rises and squeezes mixture in the cylinder."},
+          {"symbol": "wind", "title": "Transfer", "caption": "Crankcase pressure pushes fresh charge through ports."},
+          {"symbol": "sparkles", "title": "Power", "caption": "Combustion drives the piston and starts the next charge."}
+        ]
+      },
+      "summary": "A 2-stroke makes power every crankshaft revolution, so fuel delivery, crankcase sealing, exhaust flow, and top-end condition are tightly connected.",
+      "sections": [
+        {"type": "cards", "title": "Core systems", "cards": [
+          {"title": "Fuel and oil", "items": ["Premix or oil injection lubricates bearings and cylinder", "Stale fuel gums carburetor passages", "Too little oil can overheat and score parts"]},
+          {"title": "Ignition", "items": ["Spark must be strong under compression", "Plug heat range and gap affect reliability", "Weak grounds or kill switches can mimic carb issues"]},
+          {"title": "Compression and sealing", "items": ["Rings seal cylinder pressure", "Crank seals support transfer flow", "Reeds stop mixture from reversing through the intake"]},
+          {"title": "Exhaust", "items": ["Expansion chambers shape power delivery", "Carbon can restrict small ports", "Leaking flanges create noise and tuning errors"]}
+        ]},
+        {"type": "table", "title": "Stroke events by piston movement", "table": {
+          "layout": "detailCards",
+          "columns": ["Event", "What happens", "Repair clue"],
+          "rows": [
+            ["Piston rising", "Cylinder compresses mixture while crankcase draws fresh charge.", "Low compression or leaking reeds can make starting difficult."],
+            ["Spark near top", "Ignition lights the compressed mixture before peak pressure is needed.", "Weak spark often shows as wet plug and no fire."],
+            ["Piston descending", "Power stroke pressurizes crankcase and uncovers exhaust then transfer ports.", "Blocked exhaust or air leak can flatten power."],
+            ["Transfer flow", "Fresh mixture enters and scavenges exhaust from the cylinder.", "Incorrect port, gasket, or piston orientation can disrupt flow."]
+          ]
+        }},
+        {"type": "checklist", "title": "Rules of thumb", "items": [
+          "A 2-stroke needs fuel, spark, compression, and sealed crankcase pumping.",
+          "Do not tune around mechanical damage.",
+          "A lean condition can damage a 2-stroke quickly because fuel also carries oil and cooling.",
+          "Manufacturer specifications override generic pressure or screw-turn numbers."
+        ]}
+      ]
+    },
+    {
+      "id": "no-start-triage",
+      "category": "Diagnostics",
+      "header": {
+        "title": "No-Start Triage",
+        "subtitle": "Separate fuel, spark, compression, and flooding in minutes.",
+        "icon": "🔎",
+        "accent": "green",
+        "graphics": [
+          {"symbol": "drop.fill", "title": "Fuel", "caption": "Fresh premix reaches the carb and cylinder."},
+          {"symbol": "bolt.fill", "title": "Spark", "caption": "A tester shows strong, repeatable ignition."},
+          {"symbol": "gauge.with.dots.needle.67percent", "title": "Compression", "caption": "Cylinder pressure is in serviceable range."}
+        ]
+      },
+      "summary": "Good diagnosis uses a known sequence. Many small 2-strokes fail from fuel first, then ignition, then compression, but each system should be proven.",
+      "sections": [
+        {"type": "chain", "title": "Fast no-start sequence", "steps": [
+          {"name": "Confirm fresh fuel", "goal": "Use fresh premix, open fuel valve, and verify tank venting."},
+          {"name": "Read the plug", "goal": "Dry plug points toward no fuel; wet plug points toward flooding, weak spark, or low compression."},
+          {"name": "Test spark safely", "goal": "Use an inline spark tester or grounded plug away from fuel vapor."},
+          {"name": "Try a controlled prime", "goal": "If it briefly fires on a small prime, suspect fuel delivery or carburetor metering."},
+          {"name": "Measure compression", "goal": "If fuel and spark are present, stop guessing and gauge cylinder pressure."}
+        ]},
+        {"type": "table", "title": "Symptom to likely system", "table": {
+          "layout": "detailCards",
+          "columns": ["Symptom", "Likely area", "Next test"],
+          "rows": [
+            ["Dry plug after repeated pulls", "Fuel not reaching cylinder", "Check tank vent, fuel line, filter, carb inlet, and metering diaphragm."],
+            ["Wet plug and no pop", "Flooding, weak spark, or low compression", "Install fresh plug, open throttle to clear, then spark-test."],
+            ["Starts on prime then dies", "Carburetor fuel delivery", "Clean/rebuild carb and inspect diaphragms or float needle."],
+            ["Pull rope feels easy", "Low compression", "Run compression test before tuning."],
+            ["Intermittent fire", "Ignition connection or kill circuit", "Inspect plug cap, coil ground, switch wire, and moisture."}
+          ]
+        }},
+        {"type": "checklist", "title": "Stop and inspect if you see", "items": [
+          "Metal flakes on the plug or in exhaust oil.",
+          "Grinding, knocking, or locked crankshaft.",
+          "White, blistered plug after high-load running.",
+          "Fuel leaking from carb overflow or crankcase.",
+          "Compression far below the service manual range."
+        ]}
+      ]
+    },
+    {
+      "id": "spark-plug-reading",
+      "category": "Diagnostics",
+      "header": {
+        "title": "Spark Plug Reading",
+        "subtitle": "Use plug condition as evidence, not folklore.",
+        "icon": "⚡",
+        "accent": "yellow",
+        "graphics": [
+          {"symbol": "circle.lefthalf.filled", "title": "Tan or gray", "caption": "Usually normal operating condition."},
+          {"symbol": "circle.fill", "title": "Black deposits", "caption": "Often rich, fouled, cold plug, or weak ignition."},
+          {"symbol": "sun.max.fill", "title": "White or glazed", "caption": "Investigate heat, lean mixture, or air leaks."}
+        ]
+      },
+      "summary": "NGK notes that light tan or gray usually indicates a normal condition, while wet or dry dark deposits and glazed overheating marks require follow-up diagnosis.",
+      "sections": [
+        {"type": "table", "title": "Plug appearance guide", "table": {
+          "layout": "detailCards",
+          "columns": ["Appearance", "Meaning", "Checks"],
+          "rows": [
+            ["Light tan or gray", "Normal heat and combustion range.", "Confirm gap, torque, and correct plug number."],
+            ["Dry black soot", "Rich mixture, cold heat range, clogged filter, weak ignition, or extended idle.", "Clean air filter, test spark, verify jetting and choke."],
+            ["Wet black deposits", "Flooding, excessive oil, weak spark, low compression, or rich metering.", "Install fresh plug and check fuel/oil ratio, spark, and compression."],
+            ["White, blistered, or glazed", "Overheating or lean operation.", "Stop high-load running; inspect air leaks, cooling, fuel flow, and timing."],
+            ["Rounded electrode gap", "Normal wear or extended service interval.", "Replace plug and set gap to manual spec."]
+          ]
+        }},
+        {"type": "cards", "title": "How to get a useful reading", "cards": [
+          {"title": "Use a fresh plug", "items": ["Old deposits can hide the current condition", "Match heat range and reach to the manual", "Gap before installing"]},
+          {"title": "Match the test to the circuit", "items": ["Idle reading reflects pilot/low circuit", "Wide-open chop reflects main/high circuit", "Cruise problems may sit between circuits"]},
+          {"title": "Do not ignore symptoms", "items": ["Pinging, heat, or power loss matters more than color alone", "Wet plug plus low compression points mechanical", "A perfect plug does not prove crank seals are good"]}
+        ]},
+        {"type": "checklist", "title": "Plug service checklist", "items": [
+          "Use the exact manufacturer plug type or accepted equivalent.",
+          "Inspect porcelain for cracks and terminal for looseness.",
+          "Verify cap grips the terminal securely.",
+          "Apply torque from the plug maker or service manual.",
+          "Keep one known-good spare plug in the tool kit."
+        ]}
+      ]
+    },
+    {
+      "id": "fuel-oil-mix",
+      "category": "Fuel and Air",
+      "header": {
+        "title": "Fuel, Oil, and Storage",
+        "subtitle": "Fresh premix is a repair tool.",
+        "icon": "⛽",
+        "accent": "orange",
+        "graphics": [
+          {"symbol": "fuelpump.fill", "title": "Fresh fuel", "caption": "Gasoline can go stale fast in small engines."},
+          {"symbol": "drop.triangle.fill", "title": "Oil ratio", "caption": "Use the ratio specified for the engine and oil."},
+          {"symbol": "shippingbox.fill", "title": "Sealed storage", "caption": "Cool, labeled containers reduce varnish and water."}
+        ]
+      },
+      "summary": "Bad fuel causes hard starting, varnish, clogged passages, and lean damage. STIHL and other service references emphasize fresh fuel, accurate oil measurement, and manufacturer ratios.",
+      "sections": [
+        {"type": "table", "title": "Common premix ratios", "table": {
+          "layout": "compact",
+          "columns": ["Ratio", "Oil per 1 liter fuel"],
+          "rows": [
+            ["50:1", "20 ml"],
+            ["40:1", "25 ml"],
+            ["32:1", "31 ml"],
+            ["25:1", "40 ml"]
+          ]
+        }},
+        {"type": "cards", "title": "Fuel problems and clues", "cards": [
+          {"title": "Stale fuel", "items": ["Varnish smell", "Hard starting after storage", "Gummed carburetor metering passages"]},
+          {"title": "Too much oil", "items": ["Smoke and spooge", "Carbon in exhaust", "Fouled plug under low-load use"]},
+          {"title": "Too little oil", "items": ["Overheating risk", "Piston/cylinder scoring", "Bearing damage under load"]},
+          {"title": "Water or ethanol issues", "items": ["Cloudy fuel", "Corrosion", "Poor running after humid storage"]}
+        ]},
+        {"type": "checklist", "title": "Mixing process", "items": [
+          "Check the manual for the required ratio and oil type.",
+          "Measure gasoline and oil with marked containers.",
+          "Mix in a separate approved fuel can, not the engine tank.",
+          "Shake gently, label the ratio and date, and use fresh stock first.",
+          "Discard old or suspect premix instead of tuning around it."
+        ]}
+      ]
+    },
+    {
+      "id": "carburetor-service",
+      "category": "Fuel and Air",
+      "header": {
+        "title": "Carburetor Service and Tuning",
+        "subtitle": "Clean first, adjust second.",
+        "icon": "💨",
+        "accent": "teal",
+        "graphics": [
+          {"symbol": "l.circle.fill", "title": "L screw", "caption": "Idle and low-throttle mixture."},
+          {"symbol": "h.circle.fill", "title": "H screw", "caption": "High-speed mixture and load safety."},
+          {"symbol": "dial.low.fill", "title": "Idle speed", "caption": "Throttle stop, not mixture."}
+        ]
+      },
+      "summary": "Most adjustable 2-stroke carbs use low-speed, high-speed, and idle-speed controls. Make tiny changes, return to known baselines, and avoid lean high-speed settings.",
+      "sections": [
+        {"type": "chain", "title": "Service before tuning", "steps": [
+          {"name": "Verify fuel supply", "goal": "Fuel flows from tank through filter and line without bubbles or blockage."},
+          {"name": "Inspect air side", "goal": "Filter is clean and carb boot is not cracked."},
+          {"name": "Clean metering parts", "goal": "Jets, screens, diaphragms, needle, and passages are clean and correctly assembled."},
+          {"name": "Set baseline", "goal": "Use factory screw turns or recorded starting points."},
+          {"name": "Warm and tune", "goal": "Adjust low circuit, idle speed, then high circuit under safe load."}
+        ]},
+        {"type": "table", "title": "Adjustment meanings", "table": {
+          "layout": "detailCards",
+          "columns": ["Control", "Range", "Lean/rich clue"],
+          "rows": [
+            ["L / low", "Idle to early throttle.", "Bog on snap can be lean; burble and smoke can be rich."],
+            ["H / high", "Upper throttle and sustained load.", "Too lean may rev cleanly but run hot; safe tuning stays slightly rich per manual RPM."],
+            ["T / LA / idle speed", "Mechanical throttle stop.", "Set so the engine idles without driving the attachment."],
+            ["Choke", "Cold-start enrichment.", "A stuck choke mimics rich jetting and fouls plugs."]
+          ]
+        }},
+        {"type": "checklist", "title": "Carb rebuild warning signs", "items": [
+          "Starts on prime and dies repeatedly.",
+          "Diaphragms are stiff, curled, or cracked.",
+          "Primer bulb never fills or stays collapsed.",
+          "Needle tip is grooved or inlet screen is varnished.",
+          "Adjustment screws have little effect after cleaning."
+        ]}
+      ]
+    },
+    {
+      "id": "air-leaks-reeds",
+      "category": "Fuel and Air",
+      "header": {
+        "title": "Air Leaks and Reed Valves",
+        "subtitle": "Lean symptoms often come from unmetered air.",
+        "icon": "🌬️",
+        "accent": "cyan",
+        "graphics": [
+          {"symbol": "seal.fill", "title": "Crank seals", "caption": "Leaks weaken crankcase pumping."},
+          {"symbol": "rectangle.split.3x1.fill", "title": "Reeds", "caption": "Petals must seal and not chip."},
+          {"symbol": "scope", "title": "Pressure test", "caption": "Prove sealing before tuning."}
+        ]
+      },
+      "summary": "A 2-stroke depends on crankcase pressure. Leaking seals, intake boots, gaskets, or reed valves can create lean running, hanging idle, and hard starting.",
+      "sections": [
+        {"type": "cards", "title": "Leak locations", "cards": [
+          {"title": "Intake boot", "items": ["Cracks open with vibration", "Loose clamps bypass carb metering", "Spray tests are only rough clues"]},
+          {"title": "Crank seals", "items": ["May cause hanging idle", "Can pull transmission oil on some engines", "Best confirmed with pressure/vacuum test"]},
+          {"title": "Base gasket", "items": ["Air leak at cylinder joint", "Often appears after top-end work", "Can make plug read lean"]},
+          {"title": "Reed cage", "items": ["Chipped petals reduce crankcase compression", "Gaps allow mixture reversal", "Wrong gasket can block flow"]}
+        ]},
+        {"type": "table", "title": "Air leak symptoms", "table": {
+          "layout": "detailCards",
+          "columns": ["Symptom", "Why it happens", "Next move"],
+          "rows": [
+            ["Idle hangs high", "Extra air keeps mixture lean after throttle closes.", "Inspect boot, clamps, throttle slide, and seals."],
+            ["Needs choke to run warm", "Choke compensates for lean metering or leak.", "Check fuel flow and pressure-test intake/crankcase."],
+            ["White or blistered plug", "Combustion heat rises with lean mixture.", "Stop running hard until leak and jetting are verified."],
+            ["Spit-back through carb", "Reed petal not sealing or intake pulse is unstable.", "Remove reed cage and inspect petals and stops."]
+          ]
+        }},
+        {"type": "checklist", "title": "Reed inspection", "items": [
+          "Petals sit flat against the cage with no visible daylight.",
+          "No chipped corners, frayed composite, or cracked steel.",
+          "Stops are not bent beyond manual spec.",
+          "Cage surface is clean and gasket faces are flat.",
+          "Fasteners use correct thread locking method where specified."
+        ]}
+      ]
+    },
+    {
+      "id": "compression-testing",
+      "category": "Top End",
+      "header": {
+        "title": "Compression Testing",
+        "subtitle": "Measure before you rebuild or tune.",
+        "icon": "📈",
+        "accent": "indigo",
+        "graphics": [
+          {"symbol": "gauge.with.dots.needle.50percent", "title": "Gauge", "caption": "Use the right adapter and seal."},
+          {"symbol": "arrow.up.right.circle.fill", "title": "Wide open", "caption": "Open throttle while cranking."},
+          {"symbol": "doc.text.magnifyingglass", "title": "Manual spec", "caption": "Generic psi ranges are only triage."}
+        ]
+      },
+      "summary": "Small equipment references often cite roughly 90-110 psi as normal and below 70 psi as severe, while powersports engines may require higher values. Always compare with the service manual.",
+      "sections": [
+        {"type": "chain", "title": "Compression test procedure", "steps": [
+          {"name": "Warm if possible", "goal": "A warm, running engine gives a more realistic ring seal reading."},
+          {"name": "Disable ignition/fuel safely", "goal": "Avoid accidental start and keep spark away from fuel vapor."},
+          {"name": "Install tester", "goal": "Thread the adapter into the spark plug hole by hand and seal it."},
+          {"name": "Open throttle", "goal": "Hold throttle wide open so the cylinder can fill with air."},
+          {"name": "Crank to peak", "goal": "Pull or crank until the gauge stops rising, then record the value."}
+        ]},
+        {"type": "table", "title": "Reading interpretation", "table": {
+          "layout": "detailCards",
+          "columns": ["Reading", "Meaning", "Action"],
+          "rows": [
+            ["At manual spec", "Top-end sealing is likely serviceable.", "Continue fuel, spark, exhaust, and leak diagnosis."],
+            ["Slightly low", "Rings may be worn or gauge/test method may vary.", "Repeat warm with wide-open throttle and compare trend."],
+            ["Very low", "Worn rings, scored cylinder, damaged piston, or gasket leak.", "Remove exhaust for visual piston/cylinder inspection."],
+            ["Improves with oil", "Temporary oil seal points toward ring or cylinder wear.", "Plan top-end inspection."],
+            ["No improvement with oil", "Possible gasket, cracked piston, or test error.", "Inspect mechanically before ordering parts."]
+          ]
+        }},
+        {"type": "checklist", "title": "Avoid bad readings", "items": [
+          "Do not test with a closed throttle.",
+          "Use a gauge with a check valve near the adapter.",
+          "Charge battery on electric-start machines.",
+          "Repeat the test and record engine temperature.",
+          "Do not compare different gauges as exact truth."
+        ]}
+      ]
+    },
+    {
+      "id": "top-end-rebuild",
+      "category": "Top End",
+      "header": {
+        "title": "Top-End Inspection and Rebuild",
+        "subtitle": "Piston, rings, cylinder, clips, and gaskets.",
+        "icon": "🔧",
+        "accent": "red",
+        "graphics": [
+          {"symbol": "circle.grid.cross.fill", "title": "Piston crown", "caption": "Arrow or mark faces correct direction."},
+          {"symbol": "circle.dotted", "title": "Ring locator", "caption": "Ends must sit on pins and avoid ports."},
+          {"symbol": "smallcircle.filled.circle.fill", "title": "Circlips", "caption": "Install fully seated and oriented correctly."}
+        ]
+      },
+      "summary": "A top-end rebuild is precision work. The big failures come from dirt, wrong piston orientation, pinched rings, reused clips, and ignoring cylinder measurements.",
+      "sections": [
+        {"type": "cards", "title": "Inspect before ordering", "cards": [
+          {"title": "Cylinder", "items": ["Look for vertical scoring", "Measure bore and out-of-round", "Confirm plating or sleeve service path"]},
+          {"title": "Piston", "items": ["Check skirt wear and crown wash", "Match size and orientation marks", "Replace after seizure damage"]},
+          {"title": "Rings", "items": ["Check end gap in bore", "Confirm top side marking", "Make sure ends meet locator pins"]},
+          {"title": "Small end", "items": ["Inspect wrist pin and bearing", "Replace clips, do not reuse", "Cover crankcase while installing clips"]}
+        ]},
+        {"type": "chain", "title": "Assembly sequence", "steps": [
+          {"name": "Prepare parts", "goal": "Wash cylinder, verify ring gaps, confirm piston direction, and oil bore."},
+          {"name": "Protect crankcase", "goal": "Stuff clean lint-free rag around rod opening before clip work."},
+          {"name": "Install piston", "goal": "Fit bearing, pin, and new clips fully seated in grooves."},
+          {"name": "Compress rings", "goal": "Align ring ends with locator pins and slide cylinder gently without force."},
+          {"name": "Torque and recheck", "goal": "Use pattern and torque specs, then pressure-test where required."}
+        ]},
+        {"type": "checklist", "title": "Never skip", "items": [
+          "Use a service manual for torque, clearance, and ring gap.",
+          "Replace circlips and gaskets.",
+          "Point piston mark in the specified direction.",
+          "Oil cylinder and bearings before assembly.",
+          "Break in according to engine and ring manufacturer guidance."
+        ]}
+      ]
+    },
+    {
+      "id": "exhaust-power-valve",
+      "category": "Top End",
+      "header": {
+        "title": "Exhaust, Silencer, and Power Valve",
+        "subtitle": "Backpressure, carbon, spooge, and moving valves.",
+        "icon": "🌀",
+        "accent": "gray",
+        "graphics": [
+          {"symbol": "pipe.and.drop.fill", "title": "Spooge", "caption": "Oil residue can point to rich or cold running."},
+          {"symbol": "rectangle.compress.vertical", "title": "Packing", "caption": "Silencer packing affects noise and flow."},
+          {"symbol": "gearshape.2.fill", "title": "Power valve", "caption": "Carbon can stick valve movement."}
+        ]
+      },
+      "summary": "A restricted exhaust can make a good engine feel weak. Rich running and low-load use leave carbon that hides in ports, silencers, and power-valve assemblies.",
+      "sections": [
+        {"type": "table", "title": "Exhaust clues", "table": {
+          "layout": "detailCards",
+          "columns": ["Clue", "Possible cause", "Repair direction"],
+          "rows": [
+            ["Heavy black oil at silencer", "Rich jetting, too much oil, cold operation, or weak spark.", "Confirm plug, air filter, carb settings, and operating temperature."],
+            ["Weak top-end power", "Plugged spark arrestor, collapsed packing, stuck power valve, or rich main.", "Inspect and clean exhaust path before jet changes."],
+            ["Exhaust leak at flange", "Damaged O-rings, springs, gasket, or bent pipe.", "Replace seals and verify pipe seating."],
+            ["Rattling valve system", "Loose linkage or worn components.", "Follow service manual inspection and adjustment procedure."]
+          ]
+        }},
+        {"type": "cards", "title": "Cleaning priorities", "cards": [
+          {"title": "Small equipment mufflers", "items": ["Check spark arrestor screen", "Remove carbon per manual", "Avoid damaging catalyst-equipped mufflers"]},
+          {"title": "Dirt bike chambers", "items": ["Inspect dents and flange fit", "Replace O-rings and springs", "Repack silencer when oil-soaked"]},
+          {"title": "Power valves", "items": ["Mark linkage orientation", "Clean carbon gently", "Verify free movement before cover goes on"]}
+        ]},
+        {"type": "checklist", "title": "After exhaust work", "items": [
+          "Start with known carb settings.",
+          "Check for leaks while cold and after heat cycle.",
+          "Listen for new rattles before riding or cutting under load.",
+          "Retorque accessible fasteners after first heat cycle if manual allows.",
+          "Recheck plug condition after sustained load."
+        ]}
+      ]
+    },
+    {
+      "id": "overheating-seizure",
+      "category": "Diagnostics",
+      "header": {
+        "title": "Overheating and Seizure Clues",
+        "subtitle": "Read heat damage before repeating it.",
+        "icon": "🌡️",
+        "accent": "pink",
+        "graphics": [
+          {"symbol": "thermometer.high", "title": "Heat", "caption": "Lean, timing, cooling, or load can raise temps."},
+          {"symbol": "exclamationmark.triangle.fill", "title": "Seizure", "caption": "Find the cause before installing parts."},
+          {"symbol": "magnifyingglass.circle.fill", "title": "Scoring pattern", "caption": "Damage location tells a story."}
+        ]
+      },
+      "summary": "A seized 2-stroke is often a symptom, not the root cause. Air leaks, lean jetting, old fuel, wrong oil ratio, cooling blockage, or detonation must be corrected.",
+      "sections": [
+        {"type": "table", "title": "Damage patterns", "table": {
+          "layout": "detailCards",
+          "columns": ["Pattern", "Common cause", "What to inspect"],
+          "rows": [
+            ["Exhaust-side scoring", "High heat, lean mixture, insufficient oil, or restricted cooling.", "Fuel flow, main jet, air leaks, cooling fins/radiator, exhaust blockage."],
+            ["Four-corner seizure", "Cold seizure or clearance issue.", "Warm-up practice, piston clearance, bore measurement."],
+            ["Piston crown peppered", "Detonation or debris.", "Fuel octane, ignition timing, squish, air leaks, intake filtration."],
+            ["Ring stuck in groove", "Carbon, heat, or oil failure.", "Exhaust restriction, oil quality, jetting, service interval."}
+          ]
+        }},
+        {"type": "cards", "title": "Root-cause buckets", "cards": [
+          {"title": "Lean operation", "items": ["Air leak", "Clogged jet or fuel filter", "Incorrect high-speed setting"]},
+          {"title": "Lubrication", "items": ["Wrong ratio", "Bad oil", "Oil injection failure"]},
+          {"title": "Cooling", "items": ["Blocked fins", "Low coolant", "Mud-packed radiator"]},
+          {"title": "Assembly", "items": ["Tight clearance", "Wrong piston direction", "Pinched ring"]}
+        ]},
+        {"type": "checklist", "title": "Before the replacement top end", "items": [
+          "Pressure/vacuum test crankcase if the engine design allows.",
+          "Clean or replace carburetor parts that control high-speed fuel.",
+          "Verify cooling path and fan/shroud/radiator condition.",
+          "Check timing, plug heat range, and fuel quality.",
+          "Measure cylinder and piston clearances."
+        ]}
+      ]
+    },
+    {
+      "id": "maintenance-storage",
+      "category": "Reference",
+      "header": {
+        "title": "Maintenance and Long-Term Storage",
+        "subtitle": "Keep small problems from becoming carb rebuilds.",
+        "icon": "📅",
+        "accent": "mint",
+        "graphics": [
+          {"symbol": "calendar.badge.clock", "title": "Intervals", "caption": "Hours and seasons matter."},
+          {"symbol": "air.purifier.fill", "title": "Air filter", "caption": "A dirty filter changes mixture and wear."},
+          {"symbol": "archivebox.fill", "title": "Storage", "caption": "Fuel decisions determine spring starting."}
+        ]
+      },
+      "summary": "Fresh fuel, clean air, a good plug, and dry storage solve many 2-stroke complaints before diagnosis begins.",
+      "sections": [
+        {"type": "table", "title": "Routine intervals", "table": {
+          "layout": "detailCards",
+          "columns": ["Task", "When", "Why"],
+          "rows": [
+            ["Air filter service", "Often in dust, before tuning.", "A clogged filter richens mixture and raises wear risk."],
+            ["Spark plug inspection", "Seasonally or when symptoms change.", "Shows fouling, wear, and heat clues."],
+            ["Fuel refresh", "Every 30 days for unstabilized premix as a conservative rule.", "Old fuel loses volatility and gums passages."],
+            ["Fastener check", "After rebuild and heavy vibration use.", "Loose intake or exhaust parts create leaks."],
+            ["Compression log", "At baseline and when power drops.", "Trend catches top-end wear early."]
+          ]
+        }},
+        {"type": "cards", "title": "Storage strategies", "cards": [
+          {"title": "Short storage", "items": ["Use fresh stabilized fuel if recommended", "Run long enough to circulate", "Store cool and dry"]},
+          {"title": "Long storage", "items": ["Drain or run dry where manual recommends", "Fog or oil cylinder if specified", "Protect intake and exhaust from pests"]},
+          {"title": "Return to service", "items": ["Use fresh premix", "Inspect lines for cracks", "Check filter and plug before starting"]}
+        ]},
+        {"type": "checklist", "title": "Field kit", "items": [
+          "Known-good spark plug and plug wrench.",
+          "Small fuel line and filter.",
+          "Correct screwdriver or limiter tool for carb adjustments where legal.",
+          "Compression tester adapter for your plug thread.",
+          "Zip bags, marker, and nitrile gloves."
+        ]}
+      ]
+    },
+    {
+      "id": "tools-torque",
+      "category": "Reference",
+      "header": {
+        "title": "Tools, Torque, and Measurements",
+        "subtitle": "Small engines reward measured work.",
+        "icon": "📏",
+        "accent": "brown",
+        "graphics": [
+          {"symbol": "wrench.adjustable.fill", "title": "Right tool", "caption": "Avoid rounded screws and cracked castings."},
+          {"symbol": "ruler.fill", "title": "Measure", "caption": "Clearance and gap decide reliability."},
+          {"symbol": "number.circle.fill", "title": "Torque", "caption": "Use sequence and units from the manual."}
+        ]
+      },
+      "summary": "A torque wrench, feeler gauges, micrometers, and a clean manual beat guesswork. Generic values are not a substitute for exact engine data.",
+      "sections": [
+        {"type": "table", "title": "Measurement map", "table": {
+          "layout": "detailCards",
+          "columns": ["Measurement", "Tool", "Used for"],
+          "rows": [
+            ["Spark plug gap", "Wire or blade gauge.", "Reliable ignition and coil load."],
+            ["Compression", "Thread-in compression tester.", "Top-end health trend."],
+            ["Ring end gap", "Feeler gauges with ring squared in bore.", "Prevent binding or poor seal."],
+            ["Piston clearance", "Micrometer and bore gauge.", "Avoid cold seizure or piston slap."],
+            ["Torque", "Small-range torque wrench.", "Head, cylinder, intake, and exhaust fasteners."]
+          ]
+        }},
+        {"type": "cards", "title": "Tool quality matters", "cards": [
+          {"title": "Carburetor screws", "items": ["Use exact driver shape", "Do not force limiter caps", "Record turns before removal"]},
+          {"title": "Soft aluminum", "items": ["Start threads by hand", "Use torque in stages", "Repair stripped threads correctly"]},
+          {"title": "Precision parts", "items": ["Keep measuring tools clean", "Measure at specified temperature", "Compare to manual ranges"]}
+        ]},
+        {"type": "checklist", "title": "When specs are missing", "items": [
+          "Find the model-specific service manual before internal engine work.",
+          "Use parts diagrams to confirm gasket order and fastener length.",
+          "Do not borrow torque specs from a different displacement.",
+          "Ask a qualified shop to measure plated cylinders if tools are unavailable.",
+          "Treat generic web values as triage only."
+        ]}
+      ]
+    },
+    {
+      "id": "sources-reference",
+      "category": "Reference",
+      "header": {
+        "title": "Research Sources and Field Notes",
+        "subtitle": "What this guide is based on and how to use it safely.",
+        "icon": "📚",
+        "accent": "blue",
+        "graphics": [
+          {"symbol": "book.closed.fill", "title": "Manual first", "caption": "Model specs always win."},
+          {"symbol": "link.circle.fill", "title": "Sources", "caption": "External references inform generic workflows."},
+          {"symbol": "person.crop.circle.badge.exclamationmark", "title": "Know limits", "caption": "Use a pro for unsafe or high-risk repairs."}
+        ]
+      },
+      "summary": "This app organizes common 2-stroke repair knowledge into field workflows. It is not a replacement for model-specific service literature.",
+      "sections": [
+        {"type": "table", "title": "Research references", "table": {
+          "layout": "detailCards",
+          "columns": ["Source", "Used for", "URL"],
+          "rows": [
+            ["eReplacementParts diagnosis guide", "Fuel, ignition, compression triage and small-equipment compression ranges.", "https://www.ereplacementparts.com/repair-center/article/7348/How_to_Diagnose_Two_CycleTwo_Stroke_Engines.html"],
+            ["A1CR two-stroke troubleshooting", "No-start logic, wet/dry plug clues, fuel bypass testing, and 90 psi starting reference.", "https://www.a1cr.net/crintro-com/two-stroke_2.html"],
+            ["NGK spark plug reading", "Normal, fouled, overheating, deposit, and wear interpretations.", "https://ngksparkplugs.com/en/resources/read-spark-plug"],
+            ["STIHL fuel mixing guide", "Fresh fuel, 50:1 example with STIHL oil, alternative ratios, and shelf-life cautions.", "https://www.stihl.com.au/en/work-technique-power-tool-maintenance/garden-guides-and-projects/how-to-mix-2stroke-fuel"],
+            ["SGS carburettor tuning guide", "H/L screw roles, rich/lean adjustment effects, and tuning sequence concepts.", "https://www.sgs-engineering.com/help-advice/how-to-tune-a-2-stroke-carburettor"],
+            ["Snow Goer top-end rebuild tips", "Ring orientation, circlip placement, cylinder prep, and assembly cautions.", "https://snowgoer.com/snowmobile-tech-tips/snowmobile-tips/2-stroke-top-end-teardown-rebuild-tips/24103/"]
+          ]
+        }},
+        {"type": "cards", "title": "How to apply the guide", "cards": [
+          {"title": "Generic guidance", "items": ["Use for diagnosis flow and learning", "Expect numbers to vary by engine", "Record your own baseline"]},
+          {"title": "Manual-required work", "items": ["Torque values", "Clearances and ring gaps", "Oil ratio and carb baseline"]},
+          {"title": "Get help", "items": ["Crank rebuilds", "Severe seizure damage", "High-performance jetting under load"]}
+        ]},
+        {"type": "checklist", "title": "Content safety notes", "items": [
+          "Do not run an engine that shows lean overheating or seizure signs.",
+          "Do not defeat safety guards during testing.",
+          "Do not perform spark tests around fuel vapor.",
+          "Confirm legal carb adjustment rules for emissions-controlled equipment.",
+          "Use professional service for repairs beyond your tools and experience."
+        ]}
+      ]
+    }
+  ]
+}
