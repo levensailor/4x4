@@ -127,7 +127,7 @@
             ["Wet plug and no pop", "Flooding, weak spark, or low compression", "Install fresh plug, open throttle to clear, then spark-test."],
             ["Starts on prime then dies", "Carburetor fuel delivery", "Clean/rebuild carb and inspect diaphragms or float needle."],
             ["Pull rope feels easy", "Low compression", "Run compression test before tuning."],
-            ["Intermittent fire", "Ignition connection or kill circuit", "Inspect plug cap, coil ground, switch wire, and moisture."}
+            ["Intermittent fire", "Ignition connection or kill circuit", "Inspect plug cap, coil ground, switch wire, and moisture."]
           ]
         }},
         {"type": "checklist", "title": "Stop and inspect if you see", "items": [
@@ -448,7 +448,7 @@
             ["Exhaust-side scoring", "High heat, lean mixture, insufficient oil, or restricted cooling.", "Fuel flow, main jet, air leaks, cooling fins/radiator, exhaust blockage."],
             ["Four-corner seizure", "Cold seizure or clearance issue.", "Warm-up practice, piston clearance, bore measurement."],
             ["Piston crown peppered", "Detonation or debris.", "Fuel octane, ignition timing, squish, air leaks, intake filtration."],
-            ["Ring stuck in groove", "Carbon, heat, or oil failure.", "Exhaust restriction, oil quality, jetting, service interval."}
+            ["Ring stuck in groove", "Carbon, heat, or oil failure.", "Exhaust restriction, oil quality, jetting, service interval."]
           ]
         }},
         {"type": "cards", "title": "Root-cause buckets", "cards": [
